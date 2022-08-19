@@ -13,11 +13,6 @@ CREATE TABLE Pizzas (
 );
 
 
-!!! IDENTITY(1,1) [start op 1, en incrementeert met 1] = AUTO_INCREMENT in MySQL 
-&& Text(max) bestaat alleen in MySQL, niet in SQL = text
-
----
-
 SET IDENTITY_INSERT Pizzas ON;
 
 INSERT INTO Pizzas (Id, Name, Price, Spiciness, Description) VALUES(1, 'Pepperoni', 8.99, 'SPICY', 'Pepperoni Pizza - a real bestseller!');
@@ -27,6 +22,3 @@ INSERT INTO Pizzas (Id, Name, Price, Spiciness, Description) VALUES(2, 'Margarit
 INSERT INTO Pizzas (Id, Name, Price, Spiciness, Description) VALUES(3, 'Diabolo', 9.99, 'HOT', 'Diabolo a very hot pizza.');
 
 SET IDENTITY_INSERT Pizzas OFF;
-
----
-
