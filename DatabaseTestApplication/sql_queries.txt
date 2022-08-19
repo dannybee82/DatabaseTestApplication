@@ -1,0 +1,32 @@
+Use Queries to create database:
+
+
+CREATE DATABASE eternal_pizza;
+
+
+CREATE TABLE Pizzas (
+    Id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    Name varchar(80) NOT NULL,
+    Price money NOT NULL,
+    Spiciness varchar(255) NOT NULL DEFAULT 'NONE',
+    Description text NOT NULL
+);
+
+
+!!! IDENTITY(1,1) [start op 1, en incrementeert met 1] = AUTO_INCREMENT in MySQL 
+&& Text(max) bestaat alleen in MySQL, niet in SQL = text
+
+---
+
+SET IDENTITY_INSERT Pizzas ON;
+
+INSERT INTO Pizzas (Id, Name, Price, Spiciness, Description) VALUES(1, 'Pepperoni', 8.99, 'SPICY', 'Pepperoni Pizza - a real bestseller!');
+
+INSERT INTO Pizzas (Id, Name, Price, Spiciness, Description) VALUES(2, 'Margarita', 7.99, 'NONE', 'Margarita - a casual pizza with tomato and cheese');
+
+INSERT INTO Pizzas (Id, Name, Price, Spiciness, Description) VALUES(3, 'Diabolo', 9.99, 'HOT', 'Diabolo a very hot pizza.');
+
+SET IDENTITY_INSERT Pizzas OFF;
+
+---
+
